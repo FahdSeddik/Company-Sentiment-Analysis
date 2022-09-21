@@ -12,9 +12,6 @@ from st_aggrid import GridUpdateMode, DataReturnMode
 from transformers import pipeline
 from nltk.corpus import stopwords
 from wordcloud import WordCloud, STOPWORDS
-import arabic_reshaper
-from bidi.algorithm import get_display
-import re
 
 def setup_model():
     """
@@ -136,7 +133,7 @@ def main():
                 data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
                 fit_columns_on_grid_load=False,
             )
-
+            st.subheader("Word Cloud")
             #Word Cloud
             if opt=='English':
                 words = " ".join(word for tweet in tweets for word in tweet.split())
@@ -151,10 +148,13 @@ def main():
                 ax2.imshow(wordcloud, interpolation='bilinear')
                 st.pyplot(fig2)
             else:
-                st.error('WordCloud not available for Language = {opt}')
+                st.error(f'WordCloud not available for Language = {opt}')
 
     else:
         st.subheader("About")
+        st.write("This was made in order to have an idea about people's opinion on a certain company. The program scrapes twitter for tweets\
+             that are about a certain company. The tweets are then fed into a model for sentiment analysis which is then used \
+            to display useful information about each company and public opinion.")
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@
 # Company-Sentiment-Analysis
 This is a Streamlit app for sentiment analysis that uses [XLM RoBERTa](https://huggingface.co/akhooli/xlm-r-large-arabic-sent) model on Hugging Face. The program scrapes twitter for tweets that are about a certain company.
 The tweets are then fed into a model for sentiment analysis.  
+* You can find our CUSTOM MODEL in this repo [here](https://github.com/FahdSeddik/EgyptionCompaniesReviews_Sentiment_analysis)
 
 # Interface
 Below is a video demo of the app.   
